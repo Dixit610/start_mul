@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+	<div id="value_block">
+		<h1>Multiplication</h1>
+	<input type="number" id="value" name="" placeholder="Enter Number...">
+	<input type="submit" name="" value="submit" onclick="multiplication()">
+	</div>
+	<div id="table_block" style="margin-top: 10px;">
+		
+	</div>
+	</center>
+	<script type="text/javascript">
+		function multiplication(){
+		var value=parseInt(document.getElementById("value").value);
+
+		var table_value=document.createElement("table");
+
+		var tr=[];
+
+		
+		for(var i=1;i<=10;i++)
+		{
+
+		var td1=document.createElement("td");
+		var td2=document.createElement("td");
+		var td3=document.createElement("td");
+		var td4=document.createElement("td");
+		var td5=document.createElement("td");
+			tr[i]=document.createElement("tr");
+				td1.innerHTML=value;
+				td2.innerHTML="*";
+				td3.innerHTML=i;
+				td4.innerHTML="=";
+				td5.innerHTML=value*i;
+				tr[i].appendChild(td1);
+				tr[i].appendChild(td2);
+				tr[i].appendChild(td3);
+				tr[i].appendChild(td4);
+				tr[i].appendChild(td5);
+			table_value.appendChild(tr[i]);
+		}
+		var div_id=document.getElementById("table_block");
+		table_value.style.border="2px solid blue";
+		div_id.appendChild(table_value);
+		}
+	</script>
+</body>
+</html>
